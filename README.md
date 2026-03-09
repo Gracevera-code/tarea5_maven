@@ -182,3 +182,5 @@ pruebas ejecutadas correctamente
 DAG del proyecto
 
 A continuación se presenta la captura del DAG generado con dbt docs, donde se observa el flujo de dependencias entre fuentes, modelos staging, modelo intermediate y modelo mart.
+
+![DAG del proyecto](dag_tarea5_maven.png)
