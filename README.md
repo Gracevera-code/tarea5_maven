@@ -77,6 +77,7 @@ tarea5_maven/
 │           ├── _mart_models.yml
 │           └── mart_maven__orders_obt.sql
 
+---
 
 ## Arquitectura de modelos
 1. Staging
