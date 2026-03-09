@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_maven__orders
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_maven__website_sessions
+    columns:
+      - name: website_session_id
+        data_tests:
+          - not_null
+          - unique

@@ -1,0 +1,8 @@
+version: 2
+
+models:
+  - name: int_maven__orders_with_sessions
+    columns:
+      - name: order_id
+        data_tests:
+          - not_null

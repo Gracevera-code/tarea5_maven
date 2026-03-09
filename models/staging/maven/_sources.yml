@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: maven_raw
+    schema: raw_maven
+    tables:
+      - name: orders
+      - name: website_sessions
+      - name: order_items
+      - name: products
+      - name: website_pageviews
+      - name: order_item_refunds
