@@ -190,6 +190,8 @@ tarea5_maven/
 │           ├── _mart_models.yml
 │           └── mart_maven__orders_obt.sql
 
+```
+
 ---
 
 
@@ -284,6 +286,10 @@ tarea5_maven/
 ├── tests/
 │   ├── assert_mart_rowcount_matches_intermediate.sql
 │   └── assert_mart_rowcount_matches_staging_orders.sql
+
+```
+---
+
 Arquitectura del proyecto
 1. Staging
 
