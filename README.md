@@ -78,12 +78,12 @@ tarea5_maven/
 │           └── mart_maven__orders_obt.sql
 
 
-Arquitectura de modelos
+## Arquitectura de modelos
 1. Staging
 
 En esta capa se definieron los modelos base a partir de las tablas fuente, realizando renombrado y organización inicial de columnas.
 
-Modelos implementados:
+##Modelos implementados:
 
 stg_maven__orders
 
@@ -93,7 +93,7 @@ stg_maven__website_sessions
 
 En esta capa se construyó un modelo intermedio para integrar información de pedidos y sesiones web.
 
-Modelo implementado:
+## Modelo implementado:
 
 int_maven__orders_with_sessions
 
@@ -101,19 +101,19 @@ int_maven__orders_with_sessions
 
 En esta capa se construyó una tabla final orientada al análisis, con una vista consolidada de órdenes y datos de sesión.
 
-Modelo implementado:
+## Modelo implementado:
 
 mart_maven__orders_obt
 
 Sources configurados
 
-El proyecto utiliza el archivo:
+## El proyecto utiliza el archivo:
 
 models/staging/maven/_sources.yml
 
 con la definición de las tablas fuente dentro del esquema raw_maven.
 
-Fuentes declaradas:
+## Fuentes declaradas:
 
 orders
 
@@ -127,7 +127,7 @@ website_pageviews
 
 order_item_refunds
 
-Tests implementados
+## Tests implementados
 
 Se configuraron pruebas de calidad sobre columnas clave, principalmente:
 
@@ -135,16 +135,17 @@ not_null
 
 unique
 
-Estas pruebas fueron aplicadas sobre:
+## Estas pruebas fueron aplicadas sobre:
 
 order_id
 
 website_session_id
 
-La ejecución de pruebas se realizó con:
+## La ejecución de pruebas se realizó con:
 
 dbt test
-Ejecución del proyecto
+
+## Ejecución del proyecto
 1. Validar configuración
 dbt debug
 2. Ejecutar modelos de staging
@@ -159,7 +160,7 @@ dbt test
 dbt docs generate
 7. Visualizar documentación y DAG
 dbt docs serve
-Resultado
+## Resultado
 
 El proyecto cumple con los requerimientos de la tarea:
 
@@ -175,7 +176,7 @@ archivo _sources.yml implementado
 
 pruebas ejecutadas correctamente
 
-DAG generado con dbt docs
+## DAG generado con dbt docs
 
 DAG del proyecto
 
