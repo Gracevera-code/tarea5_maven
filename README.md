@@ -225,7 +225,7 @@ Actualizar el repositorio Git del proyecto dbt para cumplir con los siguientes p
 
 Todos los tests debían pasar correctamente con:
 
-```bash
+bash
 dbt build
 Tecnologías utilizadas
 
@@ -241,7 +241,8 @@ Git
 
 GitHub
 
-Fuente de datos
+
+## Fuente de datos
 
 Se trabajó con el dataset Maven Fuzzy Factory, compuesto por los siguientes archivos CSV:
 
@@ -291,7 +292,7 @@ tarea5_maven/
 ```
 ---
 
-Arquitectura del proyecto
+## Arquitectura del proyecto
 1. Staging
 
 En esta capa se definieron modelos base a partir de las tablas fuente, realizando renombrado de columnas, organización inicial y validaciones de calidad.
@@ -318,7 +319,7 @@ Modelo implementado:
 
 mart_maven__orders_obt
 
-Sources configurados
+## Sources configurados
 
 El proyecto utiliza el archivo:
 
@@ -326,7 +327,7 @@ models/staging/maven/_sources.yml
 
 con la definición de las tablas fuente dentro del esquema raw_maven.
 
-Fuentes declaradas:
+## Fuentes declaradas:
 
 orders
 
@@ -340,7 +341,7 @@ website_pageviews
 
 order_item_refunds
 
-Instalación de dbt-expectations
+## Instalación de dbt-expectations
 
 Se agregó el paquete dbt-expectations mediante el archivo:
 
@@ -355,13 +356,13 @@ Esto permitió incorporar validaciones adicionales sobre rangos y consistencia d
 Tests implementados
 Tests genéricos
 
-Se configuraron tests genéricos como:
+## Se configuraron tests genéricos como:
 
 not_null
 
 unique
 
-Aplicados sobre columnas clave como:
+## Aplicados sobre columnas clave como:
 
 order_id
 
@@ -375,7 +376,7 @@ cogs_usd
 
 items_purchased
 
-Tests de dbt-expectations
+## Tests de dbt-expectations
 
 Se implementaron pruebas avanzadas con dbt-expectations, por ejemplo:
 
@@ -389,7 +390,7 @@ expect_column_values_to_be_between sobre cogs_usd
 
 expect_column_values_to_be_between sobre website_session_id
 
-Singular tests personalizados
+## Singular tests personalizados
 
 Se crearon los siguientes singular tests:
 
@@ -399,7 +400,7 @@ assert_mart_rowcount_matches_staging_orders.sql
 
 Estos validan que la cantidad de registros del modelo mart sea consistente con los modelos upstream utilizados.
 
-Documentación
+## Documentación
 
 Se documentaron todos los modelos implementados y sus columnas clave en los archivos:
 
@@ -417,7 +418,7 @@ descripción de columnas relevantes
 
 definición de pruebas asociadas
 
-Ejecución del proyecto
+## Ejecución del proyecto
 1. Instalar dependencias
 dbt deps
 2. Validar configuración
@@ -428,7 +429,8 @@ dbt build
 dbt docs generate
 5. Visualizar documentación y DAG
 dbt docs serve
-Resultado
+
+## Resultado
 
 El proyecto cumple con los requerimientos de la tarea 6:
 
@@ -457,3 +459,4 @@ ERROR = 0
 DAG del proyecto
 
 A continuación se presenta la captura del DAG actualizado con la documentación generada en dbt Docs.
+![DAG del proyecto](dag_tarea6_maven.png)
