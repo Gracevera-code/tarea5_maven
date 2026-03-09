@@ -2,15 +2,76 @@ version: 2
 
 models:
   - name: stg_maven__orders
+    description: "Modelo staging de órdenes. Estandariza nombres de columnas y expone los campos clave de pedidos desde la fuente raw."
     columns:
       - name: order_id
+        description: "Identificador único de la orden."
         data_tests:
           - not_null
           - unique
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 1
+      - name: order_created_at
+        description: "Fecha y hora de creación de la orden."
+        data_tests:
+          - not_null
+      - name: website_session_id
+        description: "Identificador de la sesión web asociada a la orden."
+        data_tests:
+          - not_null
+      - name: user_id
+        description: "Identificador del usuario que realizó la orden."
+      - name: primary_product_id
+        description: "Identificador del producto principal de la orden."
+      - name: items_purchased
+        description: "Cantidad de ítems comprados en la orden."
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 1
+      - name: price_usd
+        description: "Precio total de la orden en USD."
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 0
+      - name: cogs_usd
+        description: "Costo de venta de la orden en USD."
+        data_tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 0
 
   - name: stg_maven__website_sessions
+    description: "Modelo staging de sesiones web. Estandariza nombres y conserva atributos de adquisición y dispositivo."
     columns:
       - name: website_session_id
+        description: "Identificador único de la sesión web."
         data_tests:
           - not_null
           - unique
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 1
+      - name: session_created_at
+        description: "Fecha y hora de creación de la sesión."
+        data_tests:
+          - not_null
+      - name: user_id
+        description: "Identificador del usuario asociado a la sesión."
+      - name: is_repeat_session
+        description: "Indicador de si la sesión corresponde a un visitante recurrente."
+      - name: utm_source
+        description: "Fuente UTM de adquisición."
+      - name: utm_campaign
+        description: "Campaña UTM de adquisición."
+      - name: utm_content
+        description: "Contenido UTM de adquisición."
+      - name: device_type
+        description: "Tipo de dispositivo desde el que se originó la sesión."
+      - name: http_referer
+        description: "Referente HTTP asociado a la sesión."

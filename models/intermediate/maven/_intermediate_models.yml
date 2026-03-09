@@ -2,7 +2,43 @@ version: 2
 
 models:
   - name: int_maven__orders_with_sessions
+    description: "Modelo intermedio que integra órdenes con la información de su sesión web asociada."
     columns:
       - name: order_id
+        description: "Identificador único de la orden."
         data_tests:
           - not_null
+      - name: order_created_at
+        description: "Fecha y hora de creación de la orden."
+        data_tests:
+          - not_null
+      - name: website_session_id
+        description: "Identificador de la sesión asociada."
+        data_tests:
+          - not_null
+      - name: order_user_id
+        description: "Identificador del usuario de la orden."
+      - name: primary_product_id
+        description: "Producto principal comprado en la orden."
+      - name: items_purchased
+        description: "Cantidad de ítems comprados."
+      - name: price_usd
+        description: "Precio de la orden en USD."
+      - name: cogs_usd
+        description: "Costo de venta de la orden en USD."
+      - name: session_created_at
+        description: "Fecha y hora de la sesión web."
+      - name: session_user_id
+        description: "Identificador del usuario de la sesión."
+      - name: is_repeat_session
+        description: "Indicador de recurrencia de la sesión."
+      - name: utm_source
+        description: "Fuente UTM."
+      - name: utm_campaign
+        description: "Campaña UTM."
+      - name: utm_content
+        description: "Contenido UTM."
+      - name: device_type
+        description: "Tipo de dispositivo."
+      - name: http_referer
+        description: "Referente HTTP."
