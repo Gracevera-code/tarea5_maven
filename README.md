@@ -261,6 +261,7 @@ Estas tablas fueron cargadas en la base airbyte_curso_gv, dentro del esquema:
 
 raw_maven
 
+```text
 Estructura del proyecto
 tarea5_maven/
 ├── dbt_project.yml
