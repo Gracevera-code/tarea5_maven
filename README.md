@@ -64,30 +64,6 @@ A continuación se presenta la captura del DAG generado con dbt docs, donde se o
 
 ---
 
-## Estructura del proyecto
-
-```text
-tarea5_maven/
-├── dbt_project.yml
-├── README.md
-├── dag_tarea5_maven.png
-├── models/
-│   ├── staging/
-│   │   └── maven/
-│   │       ├── _sources.yml
-│   │       ├── _staging_models.yml
-│   │       ├── stg_maven__orders.sql
-│   │       └── stg_maven__website_sessions.sql
-│   ├── intermediate/
-│   │   └── maven/
-│   │       ├── _intermediate_models.yml
-│   │       └── int_maven__orders_with_sessions.sql
-│   └── marts/
-│       └── maven/
-│           ├── _mart_models.yml
-│           └── mart_maven__orders_obt.sql
-
----
 
 ## Arquitectura de modelos
 1. Staging
@@ -187,3 +163,31 @@ archivo _sources.yml implementado
 
 pruebas ejecutadas correctamente
 
+
+---
+
+
+## Estructura del proyecto
+
+```text
+tarea5_maven/
+├── dbt_project.yml
+├── README.md
+├── dag_tarea5_maven.png
+├── models/
+│   ├── staging/
+│   │   └── maven/
+│   │       ├── _sources.yml
+│   │       ├── _staging_models.yml
+│   │       ├── stg_maven__orders.sql
+│   │       └── stg_maven__website_sessions.sql
+│   ├── intermediate/
+│   │   └── maven/
+│   │       ├── _intermediate_models.yml
+│   │       └── int_maven__orders_with_sessions.sql
+│   └── marts/
+│       └── maven/
+│           ├── _mart_models.yml
+│           └── mart_maven__orders_obt.sql
+
+---
